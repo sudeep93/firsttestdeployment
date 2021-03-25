@@ -3,6 +3,7 @@ from flask import Flask, request, render_template
 import os
 import pickle
 
+print("Test")
 print(os.getcwd())
 path = os.getcwd()
 
