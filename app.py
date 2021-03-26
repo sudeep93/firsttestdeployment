@@ -4,6 +4,7 @@ import os
 import pickle
 
 print("Test")
+print("Test 2")
 print(os.getcwd())
 path = os.getcwd()
 
