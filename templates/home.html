@@ -39,29 +39,89 @@ div {
 <body>
 <center><h1><font color="white">Insurance Prediction</h1></center>
 <h2>     </h2>
+<!--age, sex, cp, trestbps, chol, fbs, restecg, thalach,exang, oldpeak, slope, ca, thal-->
+
 
 <div align="center" style="margin-right: 30%;
     margin-left: 30%;">
 
   <form method="POST">
   <form action="/action_page.php">
-    <label for="price"></label>
-    <input type="number" id="price" name="price" placeholder="Price (between 38 and 1027)" min="38" max="1027" step="0.1" required size="35">
 
-    <label for="Tax"></label>
-    <input type="number" id="Tax" name="Tax" placeholder="Tax (between 2 or 103)" min="2" max="103" step="0.1" required size="35">
+    <label for="Age"></label>
+    <input type="number" id="age" name="age" placeholder="Age (between 0 and 150)" min="0" max="150" step="0.1" required size="35">
 
-    <label for="Driver_Age"></label>
-    <input type="number" id="Driver_Age" name="Driver_Age" placeholder="Driver Age (between 18 and 74)" min="18" max="74" required>
 
-    <label for="Licence_Length_Years"></label>
-    <input type="number" id="Licence_Length_Years" name="Licence_Length_Years" placeholder="Licence Length in Years (between 0 and 16.5)" min="-0.3" max="16.5" step="0.1" required>
-
-    <select name="req_model">
-    <option value="Logistic">Logistic Regression</option>
-    <option value="RandomForest">Random Forest</option>
-    <option value="SVM">SVM</option>
+    <select name="sex" id="sex">
+    <option value=1>Male</option>
+    <option value=0>Female</option>
   </select>
+
+    <select name="Chest_Pain_Type" id="Chest_Pain_Type">
+      <option value=0>Type 0</option>
+      <option value=1>Type 1</option>
+      <option value=2>Type 2</option>
+      <option value=3>Type 3</option>
+  </select>
+<!--    <label for="Chest_Pain_Type"></label>-->
+   <!--  <select name="Chest_Pain_Type" id='Chest_Pain_Type'>
+      <option value=0>Type 0</option>
+      <option value=1>Type 1</option> -->
+<!--      <option value=2>Type 2</option>
+      <option value=3>Type 3</option> -->
+
+    <label for="trestbps"></label>
+    <input type="number" id="trestbps" name="trestbps" placeholder="trestbps (between 90 and 210)" min="90" max="210" step="0.1" required size="35">
+
+    <label for="chol"></label>
+    <input type="number" id="chol" name="chol" placeholder="chol (between 100 and 600)" min="100" max="600" step="0.1" required size="35">
+
+<!--         <label for="Fasting_Blood_Sugar"></label>-->
+    <select name="Fasting_Blood_Sugar" id="Fasting_Blood_Sugar">
+    <option value=0>More Than 120</option>
+    <option value=1>Less Than 120</option>
+</select>
+<!--      <label for="ECG_Results"></label>-->
+    <select name="ECG_Results" id="ECG_Results">
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    </select>
+
+    <label for="thalach"></label>
+    <input type="number" id="thalach" name="thalach" placeholder="Hear rate (between 90 or 210)" min="90" max="210" step="0.1" required size="35">
+
+<!--       <label for="Exercise_induced_agine"></label>-->
+    <select name="Exercise_induced_agine" id="Exercise_induced_agine">
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    </select>
+
+    <label for="oldpeak"></label>
+    <input type="number" id="oldpeak" name="oldpeak" placeholder="oldpeak (between 0 or 7)" min="0" max="7" step="0.1" required size="35">
+
+    <select name="slope" id="slope">
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    </select>
+
+    <select name="ca" id="ca">
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    <option value=4>4</option>
+    </select>
+
+    <select name="thal">
+    <option value=0>0</option>
+    <option value=1>1</option>
+    <option value=2>2</option>
+    <option value=3>3</option>
+    </select>
+
 
 
     <input type="submit" value="Predict">
@@ -69,8 +129,8 @@ div {
 </form>
 
 <form method="GET">
-    <center><h2><font color="Black"> Sale Category is {{ target}}</h2></center>
-    <center><h2><font color="Black"> {{ sale_making}}</h2></center>
+    <center><h2><font color="Black">{{target}}</h2></center>
+    <center><h2><font color="Black"> {{heart_disease}}</h2></center>
 </form>
 
 
